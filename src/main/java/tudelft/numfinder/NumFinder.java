@@ -5,13 +5,25 @@ public class NumFinder {
     private int largest = Integer.MIN_VALUE;
 
     public void find(int[] nums) {
+
+        if (nums == null || nums.length == 0) {
+            smallest = 0;
+            largest = 0;
+            System.out.println("The array is empty.");
+            return;
+        }
+
         for(int n : nums) {
 
             if(n < smallest)
                 smallest = n;
-            else if (n > largest)
+            if (n > largest)
                 largest = n;
 
+        }
+
+        if (smallest == largest) {
+            System.out.println("The smallest and largest numbers are the same: " + smallest);
         }
     }
 
